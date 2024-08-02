@@ -1,0 +1,13 @@
+:root {
+    --background-color: #fff;
+    --accent-color: #28d979;
+    --main-text-color: #000;
+    --accent-text-color: #fff;
+    --main-box-color: #f0f0f0;
+    --accent-box-color: #000;
+    --tag-color: #ddf163;
+    --tag-background-color: rgba(126, 115, 18, 0.4);
+    --hashtag-color: #149063;
+    --hashtag-accent-color: #ebf9f2;
+    --font-family: 'Poppins';
+}
