@@ -13,6 +13,8 @@
     background-color: var(--main-box-color);
     border-radius: 12px;
     padding: 12px;
+    position: relative;
+    overflow: hidden;
 }
 
 .box_title {
@@ -20,6 +22,27 @@
     font-size: 14px;
     line-height: 150%;
     margin-block-end: 16px;
+}
+
+.animated-edit {
+    transition: transform 0.1s ease, border 0.5s ease 0.1s, filter 0.5s ease 0.1s;
+    transform: scale(1.05);
+    filter: brightness(1.2);
+    border: 1px solid #000;
+}
+
+.editing {
+    transition: transform 0.3s ease;
+    transform: scale(1.05);
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+    animation: ripple-animation 600ms linear;
+    pointer-events: none;
 }
 
 .profile-img_box {
@@ -228,7 +251,7 @@
 .education-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(116px, 1fr));
-    gap: 12px 16px;
+    gap: 12px 14px;
     align-items: start;
 }
 
@@ -419,16 +442,4 @@
         grid-column: 1 / 4;
         grid-row: 6 / 7;
     }
-}
-
-.animated-edit {
-    transition: all 1s ease;
-    transform: scale(1.05);
-    filter: brightness(1.2);
-    border: 2px solid #000;
-}
-
-.editing {
-    transition: transform 1s ease;
-    transform: scale(1.05);
 }
