@@ -10,6 +10,10 @@
     justify-content: center;
 }
 
+.editable:hover {
+    text-decoration: underline;
+}
+
 .box {
     background-color: var(--main-box-color);
     border-radius: 12px;
@@ -351,6 +355,47 @@
     font-size: 10px;
     line-height: 150%;
     color: var(--email-color);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+.download-button {
+    position: relative;
+    margin-block: 15px;
+    padding: 6px 10px;
+    background-color: var(--main-box-color);
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.download-button:after {
+    position: absolute;
+    content: '';
+    block-size: 100%;
+    inline-size: 100%;
+    right: 100%;
+    bottom: 0;
+    background-color: var(--accent-color);
+    transform: translateX(0%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.download-button:hover:after {
+    transform: translateX(100%);
+}
+
+.download-button_text {
+    font-family: var(--font-family), sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    position: relative;
+    z-index: 1;
 }
 
 @media (width < 595px) {
