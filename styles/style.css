@@ -1,7 +1,8 @@
 .main {
     font-family: var(--font-family), sans-serif;
     max-inline-size: 595px;
-    margin: 15px auto;
+    margin-inline: auto;
+    padding-block: 15px;
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(4, 124px);

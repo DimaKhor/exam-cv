@@ -1,5 +1,6 @@
 import { addRippleEffect } from './rippleEffect.js';
 import { editText } from './edit.js';
+import { downloadPDF } from './downloadPDF.js';
 
 const nameBox = document.querySelector(".name_box");
 const languagesBox = document.querySelector(".languages_box");
@@ -147,3 +148,7 @@ const contactsEmail = contactsBox.querySelector('.contacts_email');
 contactsEmail.dataset.localStorageKey = 'contactsEmail';
 contactsEmail.addEventListener('dblclick', () => editText(contactsEmail, contactsBox));
 
+document.addEventListener('DOMContentLoaded', () => {
+    const downloadButton = document.getElementById('download-button');
+    downloadButton.addEventListener('click', downloadPDF);
+});
