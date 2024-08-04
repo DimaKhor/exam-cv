@@ -20,73 +20,73 @@ export const downloadPDF = () => {
             padding: 5px 20px;
         }
 
-        #temp-element .profile-img_box {
+        #temp-element .profile-img__box {
             grid-column: 1 / 2;
             grid-row: 1 / 2;
         }
         
-        #temp-element .name_box {
+        #temp-element .person-info__box {
             grid-column: 2 / 3;
             grid-row: 1 / 2;
         }
         
-        #temp-element .languages_box {
+        #temp-element .languages__box {
             grid-column: 3 / 5;
             grid-row: 1 / 2;
         }
         
-        #temp-element .experience_box {
+        #temp-element .experience__box {
             grid-column: 1 / 4;
             grid-row: 2 / 3;
         }
         
-        #temp-element .job-list_item_content {
+        #temp-element .experience__content {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
         }
         
-        #temp-element .job-list_item_featured-points_list {
+        #temp-element .experience__featured-points_list {
             max-inline-size: 227px;
         }
         
-        #temp-element .tools_box {
+        #temp-element .tools__box {
             grid-column: 4 / 5;
             grid-row: 2 / 3;
         }
         
-        #temp-element .tools-list {
+        #temp-element .tools__list {
             display: flex;
             flex-direction: column;
             gap: 12px;
             margin-inline: 12px;
         }
         
-        #temp-element .tools-list_item-list {
+        #temp-element .tools__field_list {
             display: grid;
             grid-template-columns: repeat(2, auto);
             gap: 16px;
         }
         
-        #temp-element .education_box {
+        #temp-element .education__box {
             grid-column: 1 / 3;
             grid-row: 3 / 5;
             padding-inline: 8px;
         }
         
-        #temp-element .education-list {
+        #temp-element .education__list {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(116px, 1fr));
             gap: 10px;
             align-items: start;
         }
         
-        #temp-element .interests_box {
+        #temp-element .interests__box {
             grid-column: 3 / 5;
             grid-row: 3 / 4;
         }
         
-        #temp-element .contacts_box {
+        #temp-element .contacts__box {
             grid-column: 3 / 5;
             grid-row: 4 / 5;
         }
