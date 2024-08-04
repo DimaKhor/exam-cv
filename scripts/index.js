@@ -1,26 +1,35 @@
-import { addRippleEffect } from './rippleEffect.js';
-import { editText } from './edit.js';
-import { downloadPDF } from './downloadPDF.js';
+import { addRippleEffect } from "./rippleEffect.js";
+import { editText } from "./edit.js";
+import { downloadPDF } from "./downloadPDF.js";
 
 const nameBox = document.querySelector(".name_box");
 const languagesBox = document.querySelector(".languages_box");
-const experienceBox = document.querySelector('.experience_box');
+const experienceBox = document.querySelector(".experience_box");
 const toolsBox = document.querySelector(".tools_box");
 const educationBox = document.querySelector(".education_box");
 const interestsBox = document.querySelector(".interests_box");
-const contactsBox = document.querySelector('.contacts_box');
-const profileImageBox = document.querySelector('.profile-img_box');
+const contactsBox = document.querySelector(".contacts_box");
+const profileImageBox = document.querySelector(".profile-img_box");
 
-const boxes = [nameBox, languagesBox, experienceBox, toolsBox, educationBox, interestsBox, contactsBox, profileImageBox];
+const boxes = [
+    nameBox,
+    languagesBox,
+    experienceBox,
+    toolsBox,
+    educationBox,
+    interestsBox,
+    contactsBox,
+    profileImageBox,
+];
 
 //ripple effect
-boxes.forEach(box => {
+boxes.forEach((box) => {
     if (box) {
-        box.addEventListener('click', addRippleEffect);
+        box.addEventListener("click", addRippleEffect);
     }
 });
 
-//загружаем сохранененные элементы
+//загрузка сохранененных элементов
 const editableElements = document.querySelectorAll(".editable");
 
 window.addEventListener("load", () => {
@@ -59,31 +68,39 @@ languageItems.forEach((item, index) => {
 });
 
 //секция experience_box
-const jobItems = experienceBox.querySelectorAll('.job-list_item');
+const jobItems = experienceBox.querySelectorAll(".job-list_item");
 
 jobItems.forEach((item, index) => {
-    const dateElement = item.querySelector('.job-list_item_top-bar_date');
+    const dateElement = item.querySelector(".job-list_item_top-bar_date");
     if (dateElement) {
         dateElement.dataset.localStorageKey = `jobItem_${index}_date`;
-        dateElement.addEventListener('dblclick', () => editText(dateElement, experienceBox));
+        dateElement.addEventListener("dblclick", () =>
+            editText(dateElement, experienceBox),
+        );
     }
 
-    const roleElement = item.querySelector('.job-list_item_job-info_role');
+    const roleElement = item.querySelector(".job-list_item_job-info_role");
     if (roleElement) {
         roleElement.dataset.localStorageKey = `jobItem_${index}_role`;
-        roleElement.addEventListener('dblclick', () => editText(roleElement, experienceBox));
+        roleElement.addEventListener("dblclick", () =>
+            editText(roleElement, experienceBox),
+        );
     }
 
-    const aboutElement = item.querySelector('.job-list_item_job-info_about');
+    const aboutElement = item.querySelector(".job-list_item_job-info_about");
     if (aboutElement) {
         aboutElement.dataset.localStorageKey = `jobItem_${index}_about`;
-        aboutElement.addEventListener('dblclick', () => editText(aboutElement, experienceBox));
+        aboutElement.addEventListener("dblclick", () =>
+            editText(aboutElement, experienceBox),
+        );
     }
 
-    const pointElements = item.querySelectorAll('.job-list_item_featured-points_list_item');
+    const pointElements = item.querySelectorAll(
+        ".job-list_item_featured-points_list_item",
+    );
     pointElements.forEach((point, pointIndex) => {
         point.dataset.localStorageKey = `jobItem_${index}_point_${pointIndex}`;
-        point.addEventListener('dblclick', () => editText(point, experienceBox));
+        point.addEventListener("dblclick", () => editText(point, experienceBox));
     });
 });
 
@@ -143,12 +160,15 @@ interestItems.forEach((item, index) => {
 });
 
 //секция contacts_box
-const contactsEmail = contactsBox.querySelector('.contacts_email');
+const contactsEmail = contactsBox.querySelector(".contacts_email");
 
-contactsEmail.dataset.localStorageKey = 'contactsEmail';
-contactsEmail.addEventListener('dblclick', () => editText(contactsEmail, contactsBox));
+contactsEmail.dataset.localStorageKey = "contactsEmail";
+contactsEmail.addEventListener("dblclick", () =>
+    editText(contactsEmail, contactsBox),
+);
 
-document.addEventListener('DOMContentLoaded', () => {
-    const downloadButton = document.getElementById('download-button');
-    downloadButton.addEventListener('click', downloadPDF);
+//скачивание в pdf
+document.addEventListener("DOMContentLoaded", () => {
+    const downloadButton = document.getElementById("download-button");
+    downloadButton.addEventListener("click", downloadPDF);
 });

@@ -364,8 +364,8 @@ footer {
 
 .download-button {
     position: relative;
-    margin-block: 15px;
-    padding: 6px 10px;
+    margin-block: 5px 15px;
+    padding: 6px 16px;
     background-color: var(--main-box-color);
     border-radius: 8px;
     border: 1px solid transparent;

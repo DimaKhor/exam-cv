@@ -3,7 +3,7 @@ export function editText(element, section) {
     element.focus();
 
     if (section) {
-        section.classList.add('editing');
+        section.classList.add("editing");
     }
 
     function saveChanges() {
@@ -13,27 +13,27 @@ export function editText(element, section) {
         localStorage.setItem(localStorageKey, newText);
 
         if (section) {
-            section.classList.add('animated-edit');
+            section.classList.add("animated-edit");
 
             setTimeout(() => {
-                section.classList.remove('animated-edit');
+                section.classList.remove("animated-edit");
             }, 1000);
 
-            section.classList.remove('editing');
+            section.classList.remove("editing");
         }
 
         element.contentEditable = false;
-        element.removeEventListener('blur', saveChanges);
-        element.removeEventListener('keydown', handleKeydown);
+        element.removeEventListener("blur", saveChanges);
+        element.removeEventListener("keydown", handleKeydown);
     }
 
     function handleKeydown(e) {
-        if (e.key === 'Enter') {
+        if (e.key === "Enter") {
             e.preventDefault();
             element.blur();
         }
     }
 
-    element.addEventListener('blur', saveChanges);
-    element.addEventListener('keydown', handleKeydown);
+    element.addEventListener("blur", saveChanges);
+    element.addEventListener("keydown", handleKeydown);
 }
