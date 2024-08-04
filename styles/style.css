@@ -61,7 +61,7 @@
     block-size: 100%;
 }
 
-.name_box {
+.person-info__box {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     display: flex;
@@ -69,20 +69,20 @@
     justify-content: space-between;
 }
 
-.greetings_text {
+.person-info__greetings-text {
     font-weight: 500;
     font-size: 10px;
     line-height: 150%;
 }
 
-.user-info_name {
+.person-info__name {
     font-weight: 600;
     font-size: 14px;
     line-height: 104%;
     margin-block-end: 6px;
 }
 
-.user-info_role {
+.person-info__role {
     font-weight: 500;
     font-size: 12px;
     line-height: 150%;
@@ -110,6 +110,26 @@
     font-size: 10px;
     line-height: 104%;
     min-inline-size: 58px;
+}
+
+.languages__progress-bar {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 11px;
+    border-radius: 3px;
+}
+
+.languages__progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--progress);
+    height: 100%;
+    border-radius: 3px;
+    background-color: var(--accent-color);
 }
 
 .experience__box {
@@ -410,7 +430,7 @@ footer {
         grid-row: 1 / 2;
     }
 
-    .name_box {
+    .person-info__box {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
     }
@@ -507,7 +527,7 @@ footer {
         grid-row: 1 / 2;
     }
 
-    .name_box {
+    .person-info__box {
         grid-column: 2 / 4;
         grid-row: 1 / 2;
     }

@@ -2,7 +2,7 @@ import { addRippleEffect } from "./rippleEffect.js";
 import { editText } from "./edit.js";
 import { downloadPDF } from "./downloadPDF.js";
 
-const nameBox = document.querySelector(".name_box");
+const nameBox = document.querySelector(".person-info__box");
 const languagesBox = document.querySelector(".languages__box");
 const experienceBox = document.querySelector(".experience__box");
 const toolsBox = document.querySelector(".tools__box");
@@ -50,8 +50,8 @@ window.addEventListener("beforeunload", () => {
 });
 
 //секция name_box
-const userName = document.querySelector(".user-info_name");
-const userRole = document.querySelector(".user-info_role");
+const userName = document.querySelector(".person-info__name");
+const userRole = document.querySelector(".person-info__role");
 
 userName.dataset.localStorageKey = "userName";
 userRole.dataset.localStorageKey = "userRole";
@@ -65,6 +65,11 @@ const languageItems = document.querySelectorAll(".languages__name");
 languageItems.forEach((item, index) => {
     item.dataset.localStorageKey = `languageItem_${index}`;
     item.addEventListener("dblclick", () => editText(item, languagesBox));
+});
+
+document.querySelectorAll('.languages__progress-bar').forEach((bar) => {
+    const progress = bar.getAttribute('data-progress');
+    bar.style.setProperty('--progress', progress);
 });
 
 //секция experience_box
