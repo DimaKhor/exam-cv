@@ -3,13 +3,13 @@ import { editText } from "./edit.js";
 import { downloadPDF } from "./downloadPDF.js";
 
 const nameBox = document.querySelector(".name_box");
-const languagesBox = document.querySelector(".languages_box");
-const experienceBox = document.querySelector(".experience_box");
-const toolsBox = document.querySelector(".tools_box");
-const educationBox = document.querySelector(".education_box");
-const interestsBox = document.querySelector(".interests_box");
-const contactsBox = document.querySelector(".contacts_box");
-const profileImageBox = document.querySelector(".profile-img_box");
+const languagesBox = document.querySelector(".languages__box");
+const experienceBox = document.querySelector(".experience__box");
+const toolsBox = document.querySelector(".tools__box");
+const educationBox = document.querySelector(".education__box");
+const interestsBox = document.querySelector(".interests__box");
+const contactsBox = document.querySelector(".contacts__box");
+const profileImageBox = document.querySelector(".profile-img__box");
 
 const boxes = [
     nameBox,
@@ -60,7 +60,7 @@ userName.addEventListener("dblclick", () => editText(userName, nameBox));
 userRole.addEventListener("dblclick", () => editText(userRole, nameBox));
 
 //секция languages_box
-const languageItems = document.querySelectorAll(".languages-list_item_name");
+const languageItems = document.querySelectorAll(".languages__name");
 
 languageItems.forEach((item, index) => {
     item.dataset.localStorageKey = `languageItem_${index}`;
@@ -68,10 +68,10 @@ languageItems.forEach((item, index) => {
 });
 
 //секция experience_box
-const jobItems = experienceBox.querySelectorAll(".job-list_item");
+const jobItems = experienceBox.querySelectorAll(".experience__item");
 
 jobItems.forEach((item, index) => {
-    const dateElement = item.querySelector(".job-list_item_top-bar_date");
+    const dateElement = item.querySelector(".experience__date");
     if (dateElement) {
         dateElement.dataset.localStorageKey = `jobItem_${index}_date`;
         dateElement.addEventListener("dblclick", () =>
@@ -79,7 +79,7 @@ jobItems.forEach((item, index) => {
         );
     }
 
-    const roleElement = item.querySelector(".job-list_item_job-info_role");
+    const roleElement = item.querySelector(".experience__role");
     if (roleElement) {
         roleElement.dataset.localStorageKey = `jobItem_${index}_role`;
         roleElement.addEventListener("dblclick", () =>
@@ -87,7 +87,7 @@ jobItems.forEach((item, index) => {
         );
     }
 
-    const aboutElement = item.querySelector(".job-list_item_job-info_about");
+    const aboutElement = item.querySelector(".experience__details");
     if (aboutElement) {
         aboutElement.dataset.localStorageKey = `jobItem_${index}_about`;
         aboutElement.addEventListener("dblclick", () =>
@@ -96,7 +96,7 @@ jobItems.forEach((item, index) => {
     }
 
     const pointElements = item.querySelectorAll(
-        ".job-list_item_featured-points_list_item",
+        ".experience__featured-point",
     );
     pointElements.forEach((point, pointIndex) => {
         point.dataset.localStorageKey = `jobItem_${index}_point_${pointIndex}`;
@@ -105,7 +105,7 @@ jobItems.forEach((item, index) => {
 });
 
 //секция tools_box
-const toolsItems = toolsBox.querySelectorAll(".tools-list_item-name");
+const toolsItems = toolsBox.querySelectorAll(".tools__field");
 
 toolsItems.forEach((item, index) => {
     item.dataset.localStorageKey = `toolsItem_${index}`;
@@ -113,10 +113,10 @@ toolsItems.forEach((item, index) => {
 });
 
 //секция education_box
-const educationItems = educationBox.querySelectorAll(".education-list_item");
+const educationItems = educationBox.querySelectorAll(".education__item");
 
 educationItems.forEach((item, index) => {
-    const dateElement = item.querySelector(".education-list_item_top-bar_date");
+    const dateElement = item.querySelector(".education__date");
     if (dateElement) {
         dateElement.dataset.localStorageKey = `educationItem_${index}_date`;
         dateElement.addEventListener("dblclick", () =>
@@ -124,7 +124,7 @@ educationItems.forEach((item, index) => {
         );
     }
 
-    const nameElement = item.querySelector(".education-list_item_content_name");
+    const nameElement = item.querySelector(".education__item_name");
     if (nameElement) {
         nameElement.dataset.localStorageKey = `educationItem_${index}_name`;
         nameElement.addEventListener("dblclick", () =>
@@ -133,7 +133,7 @@ educationItems.forEach((item, index) => {
     }
 
     const hashtagElements = item.querySelectorAll(
-        ".education-list_item_content_hashtag",
+        ".education__hashtag",
     );
     hashtagElements.forEach((hashtag, hashtagIndex) => {
         hashtag.dataset.localStorageKey = `educationItem_${index}_hashtag_${hashtagIndex}`;
@@ -141,7 +141,7 @@ educationItems.forEach((item, index) => {
     });
 
     const schoolNameElement = item.querySelector(
-        ".education-list_item_school-name",
+        ".education__school-name",
     );
     if (schoolNameElement) {
         schoolNameElement.dataset.localStorageKey = `educationItem_${index}_school`;
@@ -152,7 +152,7 @@ educationItems.forEach((item, index) => {
 });
 
 //секция interests_box
-const interestItems = interestsBox.querySelectorAll(".interests-list_item");
+const interestItems = interestsBox.querySelectorAll(".interests__item");
 
 interestItems.forEach((item, index) => {
     item.dataset.localStorageKey = `interestItem_${index}`;
@@ -160,7 +160,7 @@ interestItems.forEach((item, index) => {
 });
 
 //секция contacts_box
-const contactsEmail = contactsBox.querySelector(".contacts_email");
+const contactsEmail = contactsBox.querySelector(".contacts__email");
 
 contactsEmail.dataset.localStorageKey = "contactsEmail";
 contactsEmail.addEventListener("dblclick", () =>
