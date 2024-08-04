@@ -1,5 +1,5 @@
 import { addRippleEffect } from "./rippleEffect.js";
-import { editText } from "./edit.js";
+import { editText } from "./editTextElement.js";
 import { downloadPDF } from "./downloadPDF.js";
 
 const nameBox = document.querySelector(".person-info__box");
@@ -67,9 +67,9 @@ languageItems.forEach((item, index) => {
     item.addEventListener("dblclick", () => editText(item, languagesBox));
 });
 
-document.querySelectorAll('.languages__progress-bar').forEach((bar) => {
-    const progress = bar.getAttribute('data-progress');
-    bar.style.setProperty('--progress', progress);
+document.querySelectorAll(".languages__progress-bar").forEach((bar) => {
+    const progress = bar.getAttribute("data-progress");
+    bar.style.setProperty("--progress", progress);
 });
 
 //секция experience_box
@@ -100,9 +100,7 @@ jobItems.forEach((item, index) => {
         );
     }
 
-    const pointElements = item.querySelectorAll(
-        ".experience__featured-point",
-    );
+    const pointElements = item.querySelectorAll(".experience__featured-point");
     pointElements.forEach((point, pointIndex) => {
         point.dataset.localStorageKey = `jobItem_${index}_point_${pointIndex}`;
         point.addEventListener("dblclick", () => editText(point, experienceBox));
@@ -137,17 +135,13 @@ educationItems.forEach((item, index) => {
         );
     }
 
-    const hashtagElements = item.querySelectorAll(
-        ".education__hashtag",
-    );
+    const hashtagElements = item.querySelectorAll(".education__hashtag");
     hashtagElements.forEach((hashtag, hashtagIndex) => {
         hashtag.dataset.localStorageKey = `educationItem_${index}_hashtag_${hashtagIndex}`;
         hashtag.addEventListener("dblclick", () => editText(hashtag, educationBox));
     });
 
-    const schoolNameElement = item.querySelector(
-        ".education__school-name",
-    );
+    const schoolNameElement = item.querySelector(".education__school-name");
     if (schoolNameElement) {
         schoolNameElement.dataset.localStorageKey = `educationItem_${index}_school`;
         schoolNameElement.addEventListener("dblclick", () =>
