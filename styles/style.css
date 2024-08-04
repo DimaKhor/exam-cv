@@ -421,7 +421,7 @@ footer {
     z-index: 1;
 }
 
-@media (max-width: 595px) {
+@media (width < 595px) {
     .main {
         margin-inline: 20px;
         grid-template-columns: 124px 124px auto;
@@ -518,7 +518,7 @@ footer {
     }
 }
 
-@media (max-width: 500px) {
+@media (width < 500px) {
     .main {
         margin-inline: 20px;
         grid-template-columns: 124px auto 124px;
